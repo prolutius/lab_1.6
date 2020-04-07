@@ -2,7 +2,7 @@ set(SOURCES
     tests.cpp
 )
 
-# создаем исполняемый файл
+# создаем исполняемый файл (с названием)
 add_executable(simple_test ${SOURCES})
 
 # подключаем библиотеки:
