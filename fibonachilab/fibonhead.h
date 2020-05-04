@@ -1,9 +1,16 @@
 #pragma once
 
-template < typename forfibon >
-forfibon my_fibonachi(forfibon f)
+template < unsigned forfibon > struct fibonachi
 {
-    if (f < 1) return 0;
-    if (f == 1) return 1;
-    return my_fibonachi(f - 1) + my_fibonachi(f - 2);
-}
+    static const unsigned value = fibonachi<forfibon - 1>::value + fibonachi<forfibon - 2>::value;
+    };
+
+template <> struct fibonachi <0>
+{
+    static const unsigned value = 0;
+};
+
+template <> struct fibonachi <1>
+{
+    static const unsigned value = 1;
+};
